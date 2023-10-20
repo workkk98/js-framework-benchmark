@@ -11,7 +11,7 @@ const tableComp = {
     },
     selected: String
   },
-  setup(props) {
+  setup(props, { emit }) {
     const h = Vue3.h
 
     const render = () => {
@@ -52,7 +52,7 @@ const tableComp = {
         {
           class: 'table table-hover table-striped test-data',
           onClick(event) {
-            this.$emit('click', event)
+            emit('click', event)
           }
         },
         [
@@ -69,5 +69,4 @@ const tableComp = {
   }
 }
 
-debugger
 export default Vue3InVue2(tableComp, Vue3)
